@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <connectionStrings>
+    <connection connectionString="Data Source=localhost; Integrated Security=SSPI;Initial Catalog=TestDataBase;"/>
+  </connectionStrings>
+  <appSettings>
+    <factory value="System.Data.SqlClient"/>
+    <getAllCoursesQuery value="SELECT * FROM Course"/>
+    <createCourseQuery value="INSERT INTO Course (ID, NAME) VALUES (@CourseID, @CourseName )"/>
+    <deleteCourseQuery value="DELETE FROM Course WHERE ID = @ID"/>
+    <getCourseQuery value="SELECT * FROM course WHERE ID = @ID"/>
+    <updateCourseQuery value="UPDATE course SET ID = @ID, Name = @CourseName WHERE ID = @ID"/>
+
+    <getAllScoresQuery value="SELECT * FROM Score"/>
+    <createScoreQuery value="INSERT INTO Score (LectionID, StudentID, isVisit, isHomework, Mark) VALUES (@LectionID, @StudentID, @isVisit, @isHomework, @Mark)"/>
+    <deleteScoreQuery value="DELETE FROM Score WHERE LectionID = @LectionID AND StudentID = @StudentID"/>
+    <getScoreQuery value="SELECT * FROM Score WHERE LectionID = @LectionID AND StudentID = @StudentID"/>
+    <updateScoreQuery value="UPDATE Score SET LectionID = @LectionID, StudentID = @StudentID, isVisit = @IsVisit, ISHomeWork = @isHomeWork, Mark = @Mark WHERE LectionID = @LectionID AND StudentID = @StudentID"/>
+    <getAllScoresByStudentIdQuery value="SELECT * FROM Score WHERE StudentID = @StudentID"/>
+    <getAllScoresByLectionIdQuery value="SELECT * FROM Score WHERE LectionID = @LectionID"/>
+    
+    <getAllLectionsQuery value="SELECT * FROM Lection"/>
+    <createLectionQuery value="INSERT INTO Lection (ID, Name, LectorID, Date, CourseID) VALUES (@LectionID, @LectionName, @LectorID, @Date, @CourseID)"/>
+    <deleteLectionQuery value="DELETE FROM Lection WHERE ID = @ID"/>
+    <getLectionQuery value="SELECT * FROM Lection WHERE ID = @ID"/>
+    <updateLectionQuery value="UPDATE Lection SET ID = @ID, Name = @LectionName, LectorID = @LectorID, Date = @Date, CourseID = @CourseID WHERE ID = @ID"/>
+    
+  </appSettings>
+</configuration>
